@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in page</title>
+    <!-- {% load static %} -->
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins',sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(135deg,#71b7e6,#9b59b6);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 99vh;
+        }
+        .container{
+            max-width: 700px;
+            width: 100%;
+            background-color: #fff;
+            padding: 25px 70px;
+            border-radius: 10px;
+            height: 400px;
+        }
+        .container .title{
+            font-size: 25px;
+            font-weight: 800;
+            margin-left: 200px;
+            margin-bottom: 10px;
+        }
+        .container form .user-details{
+            display: flex;
+            flex-direction: column;
+        }
+        form .user-details .input-box{
+            margin: 20px 0 12px 0;
+        }
+        .user-details.input-box input{
+            height: 45px;
+            width: 100%;
+        }
+        .user-details .input-box .details{
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .user-details .input-box input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding-left: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .user-details .input-box input:focus,.user-details .input-box input:valid{
+            border-color: #9b59b6;
+        }
+        form .button{
+            height: 45px;
+            margin: 45px 0;
+        }
+        form .button input{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            background: linear-gradient(135deg,#71b7e6,#9b59b6);
+            border:none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        form .button input:hover{
+            background: linear-gradient(-135deg,#71b7e6,#9b59b6);
+        }
+        a{
+            text-decoration: none;
+        }
+        form .button{
+            height: 45px;
+            /* margin: 45px 0; */
+        }
+        form .button button{
+            height: 100%;
+            width: 100%;
+            outline: none;
+            background: linear-gradient(135deg,#71b7e6,#9b59b6);
+            border:none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        form .button button:hover{
+            background: linear-gradient(-135deg,#71b7e6,#9b59b6);
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <!-- {% include 'messages.html' %} -->
+        <div class="title">Sign in</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Username"  name="username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+            </div>
+            <div class="button">
+               <button type="submit">SIGN IN</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

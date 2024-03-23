@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+     <div class="container">
+        <!-- {% include 'messages.html' %} -->
+        <div class="title">Registration</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name <sup>*</sup></span>
+                    <input type="text" placeholder="Full name" name="full_name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Username <sup>*</sup></span>
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <!-- <div class="input-box">
+                    <span class="details">p_name</span>
+                    <input type="text" placeholder="Person name" name="p_name" >
+                </div>
+                <div class="input-box">
+                    <span class="details">P_id <sup>*</sup></span>
+                    <input type="text" placeholder="Person id" name="p_id" required>
+                </div> -->
+                <div class="input-box">
+                    <span class="details">Email Address <sup>*</sup></span>
+                    <input type="email" placeholder="Email address" name="email" required>
+                </div>
+                <!-- <div class="input-box">
+                    <span class="details">City</span>
+                    <input type="text" placeholder="city" name="city">
+                </div>
+                <div class="input-box">
+                    <span class="details">State</span>
+                    <input type="text" placeholder="state" name="state">
+                </div> -->
+                <div class="input-box">
+                    <span class="details">Password <sup>*</sup></span>
+                    <input type="password" placeholder="Password"  name="password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm password <sup>*</sup></span>
+                    <input type="password" placeholder="Confirm_Password"  name="Confirm_Password" required>
+                </div>
+            </div>
+            <div class="links">
+                <a href="{% url 'register' %}">Create an account?</a> or
+                <a href="{% url 'signin' %}">Sign in</a><br><br>
+            </div>
+            <div class="button">
+                <button type="submit" value="REGISTER">REGISTER</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

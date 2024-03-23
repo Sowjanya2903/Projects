@@ -1,0 +1,23 @@
+{% extends 'todo.html' %}
+
+{% block displaydata %}
+    
+        {% for record in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ record.task }}</td>
+            {% if record.status == True %}
+                <td>&#9989</td>
+            {% else %}
+                <td>&#10060</td>
+            {% endif %}
+            <td>{{ record.date }}</td>
+            <td class="button"><button><a href="{% url 'edit' record.id %}" class="r">EDIT</a></button>
+                <a href="{% url 'delete' record.id %}" class="r">DELETE</a>
+                <a href="{% url 'finished' record.id %}" class="g">FINISHED</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+  
+{% endblock displaydata %}
