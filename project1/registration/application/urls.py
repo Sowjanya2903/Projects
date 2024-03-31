@@ -8,5 +8,6 @@ urlpatterns=[
     path('task/',views.task,name='task'),
     path('edit/<int:id>',views.edit,name='edit'),
     path('delete/<int:id>',views.delete,name='delete'),
-    path('finished/<int:id>',views.finished,name='finished')
+    path('finished/<int:id>',views.finished,name='finished'),
+    path('search/',views.searchbar,name="search_item")
 ]

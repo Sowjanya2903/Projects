@@ -105,11 +105,16 @@
         form .button button:hover{
             background: linear-gradient(-135deg,#71b7e6,#9b59b6);
         }
+        message{
+            color: green;
+        }
     </style>
 </head>
 <body>
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
      <div class="container">
-        <!-- {% include 'messages.html' %} -->
         <div class="title">Sign in</div>
         <form method="POST">
             {% csrf_token %}

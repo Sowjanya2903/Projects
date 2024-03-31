@@ -10,6 +10,9 @@
      <div class="container">
         <div class="outer-box">
             <div class="box">
+                {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
                 <div class="title">
                     <h1>To Do App</h1>
                 </div>
@@ -21,29 +24,12 @@
                        <button type="submit"  value="submit" class="btn">SAVE</button>
                     </form>
                 </div>
-                <div class="search">
-                    <div>
-                        <label for="show">show</label>
-                        <select name="show" id="show">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select> 
-                        <label for="show">entries</label>
-                    </div>
-                    <div>
-                        <label for="search">Search</label>
-                        <input type="text" name="search">
-                    </div> 
-                    <!-- <div>
-                        <form method="POST">
-                            {% csrf_token %}
-                            <input type="hidden" name="Display" value="True">
-                            <input type="submit" value="Display">
-                        </form>
-                    </div>  -->
+                <div class="input-task">
+                    <form action="{% url 'search_item' %}" method="get">
+                    {% csrf_token %}
+                        <input type="text" placeholder="search....." name="search">
+                       <button type="submit"  value="submit" class="btn">Search</button>
+                    </form>
                 </div>
                 <div class="table">
                     <table>

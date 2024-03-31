@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
      <div class="container">
         <!-- {% include 'messages.html' %} -->
         <div class="title">Registration</div>

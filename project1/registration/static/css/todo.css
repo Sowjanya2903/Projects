@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(128, 208, 214);
+    background-color: rgb(204, 209, 209);
 }
 *{
     padding: 0;
@@ -35,8 +35,8 @@ input{
     background-color: #fff;
     padding: 50px;
     border-radius: 15px;
-    background:linear-gradient(135deg,#71b7e6,#9b59b6);
-    max-height: 2000px;
+    background:linear-gradient(135deg,#80b1d2,#7b1da0);
+    max-height: 1000px;
 }
 .input-task{
     display: flex;
@@ -44,11 +44,11 @@ input{
     justify-content: center;
 }
 .input-task *{
-    margin: 10px;
+    margin: 5px;
     font-size: 18px;
 }
 .input-task input{
-    padding: 2px 10px;
+    padding: 1px 10px;
 }
 .input-task button{
     padding: 2px 15px;
@@ -58,12 +58,6 @@ input{
     color: #fff;
     border: none;
     border-radius: 5px;
-}
-.search{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 18px;
 }
 .search div input{
     padding: 4px 10px;
