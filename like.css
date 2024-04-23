@@ -1,0 +1,14 @@
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 10%; */
+}
+.bx-heart {
+    font-size: 300px; 
+}
+.bx.bxs-heart {
+    font-size: 300px;
+    color: red;
+}
+
